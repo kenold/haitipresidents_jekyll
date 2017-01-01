@@ -4,12 +4,15 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+<a class="twitter-follow-button"
+  href="https://twitter.com/fffabs"
+  data-show-count="true"
+  data-size="large">
+Follow @haitianpresidents
+</a>
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
+Get to know your Haitian presidents
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+----
+<h2>About the site</h2>
+How well do your know your president? Here is the full list of Haitian presidents from 1921 to today.
