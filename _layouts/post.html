@@ -1,0 +1,48 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+      {% assign person = site.people | where: "full_name", page.person | first %}
+    <h1 class="post-title">Interview with <span class="person-name"><a href="{{ person.url }}">{{ page.title }}</a></span></h1>
+    <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+  </header>
+
+  <!-- Beginning Twitter sharing Large button -->
+  <a class="twitter-share-button" href="https://twitter.com/share"
+  data-related="twitterdev"
+  data-size="large"
+  data-count="horizontal">
+  Tweet
+  </a>
+  <!-- End of Twitter sharing button -->
+
+  <div class="featured-image">
+      <img src="{{ page.photo_path }}" alt="{{ page.full_name }} photo from {{ page.company }}">
+  </div>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+  <hr>
+  <div class="tags">
+  <i class="fa fa-tag"></i> Tags:
+    {% for tags in page.tags %}
+      {{ tags  | downcase }},
+    {% endfor %}
+    {{ page.person | downcase }}, 
+    {% assign person = site.people | where: "full_name", page.person | first %}
+    {{ person.company | downcase }}
+</div>
+
+  <div class="related">
+    <h2>Related Interviews</h2>
+    {% for post in site.related_posts limit:3 %}
+      <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}
+       &nbsp; <span class="post-meta">{{ post.date | date: "%B %d, %Y" }}</span></a>
+    {% endfor %}
+  </div>
+
+</div>
