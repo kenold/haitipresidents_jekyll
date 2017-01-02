@@ -23,9 +23,13 @@ layout: default
         <h2>{{ page.name }} Terms</h2>
 
         <ul class="listing">
-            {% assign interviews = site.posts | where: "person", page.full_name %}
+            <!-- {% assign interviews = site.posts | where: "person", page.full_name %}
             {% for interview in interviews %}
                 <li><a href="{{ interview.url }}">{{ interview.date | date: '%B %d, %Y' }}: {{ interview.type }} interview</a></li>
+            {% endfor %} -->
+            {% for term in page.terms %}
+                <li>{{ term.start }} - {{ term.end }}</li>
+                <li>Prime Minister(s): {{ term.prime_ministers | join: ", " }}</li>
             {% endfor %}
         </ul>
     </div>
