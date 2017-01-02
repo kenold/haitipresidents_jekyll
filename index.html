@@ -14,10 +14,13 @@ layout: default
     <h1 class="people">Recent Haitian Presidents</h1>
 
     <ul id="post-list">
-      {% for president in site.presidents %}
+      {% for person in site.people %}
         <li>
-            <a href="{{ president.url }}">{{ president.name }}</a>
-            <h2>born {{ president.birth_date | date: '%B %d, %Y' }}</h2>
+            <!-- aside>
+                <h2>{{ person.terms }}</h2>
+            </aside -->
+            <a href="{{ person.url }}">{{ person.name }}</a>
+            <h2>born {{ person.birth_date | date: '%B %d, %Y' }}</h2>
         </li>
       {% endfor %}
     </ul>

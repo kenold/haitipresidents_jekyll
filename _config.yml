@@ -27,13 +27,13 @@ exclude:
   - Gemfile.lock
 
 collections:
-  presidents:
+  people:
       output: true;
       permalink: /president/:path/
 defaults:
   - scope:
       path: ''
-      type: 'presidents'
+      type: 'people'
     values:
       layout: 'president'
 
