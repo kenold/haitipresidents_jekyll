@@ -43,4 +43,4 @@ tags: [titid, lavalas, fanmi-lavalas]
 website:
 wikipedia: https://en.wikipedia.org/wiki/Jean-Bertrand_Aristide
 ---
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quia eos vitae rerum dignissimos illum at quae ullam assumenda, enim. Incidunt tenetur eum fugit rerum nam doloremque, fuga eaque dolorem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quia eos vitae rerum dignissimos illum at quae ullam assumenda, enim. Incidunt tenetur eum fugit rerum nam doloremque, fuga eaque dolorem.
+Aristide: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quia eos vitae rerum dignissimos illum at quae ullam assumenda, enim. Incidunt tenetur eum fugit rerum nam doloremque, fuga eaque dolorem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quia eos vitae rerum dignissimos illum at quae ullam assumenda, enim. Incidunt tenetur eum fugit rerum nam doloremque, fuga eaque dolorem.
