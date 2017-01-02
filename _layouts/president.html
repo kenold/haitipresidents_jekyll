@@ -13,7 +13,7 @@ layout: default
   </header>
 
     <!-- div class="featured-image">
-        <img src="/assets/images/presidents/{{ page.photo }}" alt="Haiti President {{ page.name }}">
+        <img src="/assets/images/presidents/{{ page.photo }}" alt="Haitian President {{ page.name }}">
     </div -->
 
     <article class="post-content">
@@ -31,9 +31,17 @@ layout: default
                 <li><strong>{{ term.start | date: "%B %-d, %Y" }} - {{ term.end | date: "%B %-d, %Y" }}</strong></li>
                 <li>Prime Minister(s): {{ term.prime_ministers | join: ", " }}</li>
                 <li>Preceded by: {{ term.predecessor }}</li>
+
+                {% comment %} Capture successor's name, set it to a "person" variable {% endcomment %}
                 {% capture person %}{{ term.successor }}{% endcapture %}
+
+                {% comment %}
+                    Find first person's "name" in people collection that matches successor's name above (person),
+                    then assign it to a "path" variable
+                {% endcomment %}
                 {% assign path = site.people | where: "name", person }} | first %}
                 <li>Succeeded by:
+                    {% comment %} Only show hyperlink if path found {% endcomment %}
                     {% if path %}
                         <a href="{{ path.url }}"> {{ term.successor }}</a>
                     {% else %}
@@ -52,17 +60,21 @@ layout: default
         <ul class="listing">
             <li>Born: {{ page.birth_date | date: '%B %d, %Y' }}, {{ page.birth_place }}</li>
             <li>Political Party:
+                {% comment %} Loop through political_parties object in people collection {% endcomment %}
             {% for party in page.political_parties %}
                 {{ party.name}} ({{ party.period}}),
             {% endfor %}
             </li>
             <li>Spouse(s):
+                {% comment %} Loop through spouses object in people collection {% endcomment %}
             {% for spouse in page.spouses %}
                 {{ spouse.name}} ({{ spouse.period }})
             {% endfor %}
             </li>
             <li>Children: {{ page.kids | join: ", "}}</li>
             <li>Religion: {{ page.religion }}</li>
+
+            {% comment %} Display website only if set {% endcomment %}
             {% if page.website %}<li>Website: {{ page.website }}</li>{% endif %}
             <li>Education: {{ page.education | join: ", " }}</li>
         </ul>
