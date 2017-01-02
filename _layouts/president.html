@@ -22,49 +22,14 @@ layout: default
   <div class="interviews">
         <h2>{{ page.name }} Terms</h2>
 
-        <ul class="listing">            
+        <ul class="listing">
             {% for term in page.terms %}
                 <li>{{ term.start | date: "%B %-d, %Y" }} - {{ term.end | date: "%B %-d, %Y" }}</li>
                 <li>Prime Minister(s): {{ term.prime_ministers | join: ", " }}</li>
+                <li>Preceded by: {{ term.predecessor }}</li>
+                <li>Succeeded by: {{ term.successor }}</li>
             {% endfor %}
         </ul>
     </div>
-
-    <!-- AWARDS -->
-    {% if page.awards.size > 0 %}
-        <div class="awards">
-            <h2>{{page.full_name }} Awards</h2>
-            <ul>
-                {% for award in page.awards %}
-                    <li>{{ award.year }} - {{ award.category }} @ {{ award.org }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
-
-    <!-- DETAILS -->
-  <div class="question">
-    <h2>More info about {{ page.full_name }}</h2>
-    <p>{{ page.full_name }} is from {{ page.place_origin}}.
-        You can find {{ page.full_name}} on <a href="https://twitter.com/{{ page.twitter }}">Twitter</a>,
-        <a href="https://facebook.com/{{ page.facebook }}">Facebook</a>.
-    </p>
-    <a class="twitter-follow-button"
-    href="https://twitter.com/{{ page.twitter }}"
-    data-show-count="true"
-    data-size="large">
-    Follow @{{ page.twitter }}
-    </a>
-    <script type="text/javascript">
-    window.twttr = (function (d, s, id) {
-      var t, js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src= "https://platform.twitter.com/widgets.js";
-      fjs.parentNode.insertBefore(js, fjs);
-      return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
-    }(document, "script", "twitter-wjs"));
-    </script>
-  </div>
 
 </div>
