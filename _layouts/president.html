@@ -5,9 +5,11 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">Served {{ page.terms.size }}
-        {% if page.terms.size <= 1 %} term{% else %} terms{% endif %}. </p>
-        <!-- <p class="post-meta">Served {{ page.terms.size | pluralize: 'term', 'terms' }}.</p> -->
+    <p class="post-meta">
+        {% assign term_count = page.terms.size %}
+        Served {{ term_count }}
+        {% if term_count <= 1 %} term{% else %} terms{% endif %}. </p>
+        <!-- <p class="post-meta">Served {{ term_count | pluralize: 'term', 'terms' }}.</p> -->
   </header>
 
     <!-- div class="featured-image">
