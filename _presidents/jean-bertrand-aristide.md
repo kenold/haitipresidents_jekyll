@@ -1,5 +1,6 @@
 ---
-id: 53
+id: jean-bertrand-aristide
+api_id: 53
 name: "Jean-Bertrand Aristide"
 type: "Official or provisional"
 photo: "jean-bertrand-aristide.jpg"
@@ -12,14 +13,14 @@ terms:
     start: "1991-02-07"
     end: "1991-09-29"
     prime_ministers: "René Préval"
-    predecessor: 52
-    successor: 54
+    predecessor: ertha-pascal-trouillot
+    successor: raoul-cedras
   - id: 2
     start: "1994-10-12"
     end: "1996-02-1996"
     prime_ministers: ["Jean Marie Chérestal", "Yvon Neptune"]
-    predecessor: 59
-    successor: 61
+    predecessor: emile-jonassaint
+    successor: rene-garcia-preval
 political_party:
   - name: 	"Lavalas Political Organization"
     period: "1991-1996"
