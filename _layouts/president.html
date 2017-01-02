@@ -5,7 +5,8 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">born {{ page.birth_date | date: '%B %d, %Y' }}</p>
+    <p class="post-meta">Served {{ page.terms.size }}
+        {% if page.terms.size <= 1 %} term{% else %} terms{% endif %}. </p>
   </header>
 
     <!-- div class="featured-image">
@@ -37,10 +38,10 @@ layout: default
         <h2>{{ page.name }} Personal Details</h2>
 
         <ul class="listing">
-            <li>Born: {{ page.birth_date }}, {{ page.birth_place }}</li>
+            <li>Born: {{ page.birth_date | date: '%B %d, %Y' }}, {{ page.birth_place }}</li>
             <li>Political Party:
             {% for party in page.political_parties %}
-                {{ party.name}} ({{ party.period }}),
+                {{ party.name}} ({{ party.period}}),
             {% endfor %}
             </li>
             <li>Spouse(s):
