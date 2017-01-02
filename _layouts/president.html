@@ -38,8 +38,16 @@ layout: default
 
         <ul class="listing">
             <li>Born: {{ page.birth_date }}, {{ page.birth_place }}</li>
-            <li>Political Party: {{ page.political_party }}</li>
-            <li>Spouse(s): {{ page.spouses }}</li>
+            <li>Political Party:
+            {% for party in page.political_parties %}
+                {{ party.name}} ({{ party.period }}),
+            {% endfor %}
+            </li>
+            <li>Spouse(s):
+            {% for spouse in page.spouses %}
+                {{ spouse.name}} ({{ spouse.period }})
+            {% endfor %}
+            </li>
             <li>Children: {{ page.kids | join: ", "}}</li>
             <li>Religion: {{ page.religion }}</li>
             {% if page.website %}<li>Website: {{ page.website }}</li>{% endif %}
