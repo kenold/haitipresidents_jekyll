@@ -32,6 +32,7 @@ layout: default
                 <li>Prime Minister(s): {{ term.prime_ministers | join: ", " }}</li>
                 <li>Preceded by: {{ term.predecessor }}</li>
                 <li>Succeeded by: {{ term.successor }}</li>
+                <li>Status: {{ term.status }}</li>
             {% endfor %}
         </ul>
     </div>
