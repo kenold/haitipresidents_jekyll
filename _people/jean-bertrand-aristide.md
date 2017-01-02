@@ -5,6 +5,7 @@ name: "Jean-Bertrand Aristide"
 categories: [President]
 type: "Official or provisional"
 photo: "jean-bertrand-aristide.jpg"
+credits:
   - name:
   - url:
 birth_date: "1943-01-17"
