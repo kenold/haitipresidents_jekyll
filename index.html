@@ -16,9 +16,10 @@ layout: default
     <ul id="post-list">
       {% for person in site.people %}
         <li>
-            <!-- aside>
-                <h2>{{ person.terms }}</h2>
-            </aside -->
+            <aside>
+                {% assign term = person.terms | last %}
+                <h2>{{ term.start | date: '%Y' }} - {{ term.end | date: '%Y' }}</h2>
+            </aside>
             <a href="{{ person.url }}">{{ person.name }}</a>
             <h2>born {{ person.birth_date | date: '%B %d, %Y' }}</h2>
         </li>
