@@ -3,7 +3,7 @@ id: jean-bertrand-aristide
 api_id: 53
 name: "Jean-Bertrand Aristide"
 categories: [President]
-type: "Official or provisional"
+title: "Official or provisional"
 photo: "jean-bertrand-aristide.jpg"
 credits:
   - name:
