@@ -5,6 +5,8 @@ name: "Jean-Bertrand Aristide"
 categories: [President]
 type: "Official or provisional"
 photo: "jean-bertrand-aristide.jpg"
+  - name:
+  - url:
 birth_date: "1943-01-17"
 birth_place: "Port-au-Prince, Haiti"
 death_date:
