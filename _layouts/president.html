@@ -28,7 +28,7 @@ layout: default
                 <li><a href="{{ interview.url }}">{{ interview.date | date: '%B %d, %Y' }}: {{ interview.type }} interview</a></li>
             {% endfor %} -->
             {% for term in page.terms %}
-                <li>{{ term.start }} - {{ term.end }}</li>
+                <li>{{ term.start | date: "%B %-d, %Y" }} - {{ term.end | date: "%B %-d, %Y" }}</li>
                 <li>Prime Minister(s): {{ term.prime_ministers | join: ", " }}</li>
             {% endfor %}
         </ul>
