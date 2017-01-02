@@ -24,7 +24,7 @@ layout: default
 
         <ul class="listing">
             {% for term in page.terms %}
-                <li>{{ term.start | date: "%B %-d, %Y" }} - {{ term.end | date: "%B %-d, %Y" }}</li>
+                <li><strong>{{ term.start | date: "%B %-d, %Y" }} - {{ term.end | date: "%B %-d, %Y" }}</strong></li>
                 <li>Prime Minister(s): {{ term.prime_ministers | join: ", " }}</li>
                 <li>Preceded by: {{ term.predecessor }}</li>
                 <li>Succeeded by: {{ term.successor }}</li>
@@ -32,4 +32,11 @@ layout: default
         </ul>
     </div>
 
+    <div class="details">
+        <p>For more information on President {{ page.name }}, please visit <a href="{{ page.wikipedia }}" target="_blank">Wikipedia</a></p>
+    </div>
+    <!-- TODO: Display photos -->
+    <!-- TODO: Display Videos -->
+    <!-- TODO: Display quotes -->
+    <!-- TODO: Display news -->
 </div>
