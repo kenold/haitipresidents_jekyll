@@ -18,8 +18,8 @@ layout: default
 
  <hr>
 
-  <!-- TERMS -->
-  <div class="interviews">
+    <!-- TERMS -->
+    <div class="interviews">
         <h2>{{ page.name }} Terms</h2>
 
         <ul class="listing">
@@ -29,6 +29,20 @@ layout: default
                 <li>Preceded by: {{ term.predecessor }}</li>
                 <li>Succeeded by: {{ term.successor }}</li>
             {% endfor %}
+        </ul>
+    </div>
+
+    <!-- PERSONAL -->
+    <div class="interviews">
+        <h2>{{ page.name }} Personal Details</h2>
+
+        <ul class="listing">
+            <li>Born: {{ page.birth_date }}, {{ page.birth_place }}</li>
+            <li>Political Party: {{ page.political_party }}</li>
+            <li>Spouse(s): {{ page.spouses }}</li>
+            <li>Children: {{ page.kids | join: ", "}}</li>
+            <li>Religion: {{ page.religion }}</li>
+            {% if page.website %}<li>Website: {{ page.website }}</li>{% endif %}
         </ul>
     </div>
 
