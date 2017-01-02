@@ -31,7 +31,15 @@ layout: default
                 <li><strong>{{ term.start | date: "%B %-d, %Y" }} - {{ term.end | date: "%B %-d, %Y" }}</strong></li>
                 <li>Prime Minister(s): {{ term.prime_ministers | join: ", " }}</li>
                 <li>Preceded by: {{ term.predecessor }}</li>
-                <li>Succeeded by: {{ term.successor }}</li>
+                {% capture person %}{{ term.successor }}{% endcapture %}
+                {% assign path = site.people | where: "name", person }} | first %}
+                <li>Succeeded by:
+                    {% if path %}
+                        <a href="{{ path.url }}"> {{ term.successor }}</a>
+                    {% else %}
+                        {{ term.successor }}
+                    {% endif %}
+                    </li>
                 <li>Status: {{ term.status }}</li>
             {% endfor %}
         </ul>
