@@ -22,7 +22,7 @@ terms:
     prime_ministers: ["Jean Marie Chérestal", "Yvon Neptune"]
     predecessor: Emile Jonassaint
     successor: Rene Garcia Preval
-political_party:
+political_parties:
   - name: 	"Lavalas Political Organization"
     period: "1991-1996"
   - name: "Fanmi Lavalas"
@@ -32,6 +32,7 @@ spouses:
     period: "1996-present"
 kids: ["James Aristide", "Annie Aristide"]
 education: ["Collège Notre-Dame", "State University of Haiti", "University of South Africa"]
+religion: Roman Catholicism
 occupation: "Priest"
 tags: [titid, lavalas, fanmi-lavalas]
 website:
