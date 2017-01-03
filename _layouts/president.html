@@ -90,7 +90,7 @@ layout: default
     {% endcomment %}
     {% assign posts = site.posts | where: "person", page.name %}
 
-    {% comment %} Only display relateed news if there are posts {% endcomment %}
+    {% comment %} Only display related news if there are posts {% endcomment %}
     {% if posts.size != 0 %}
         <div  class="interviews">
             <h2>{{ page.name }} Related News</h2>
