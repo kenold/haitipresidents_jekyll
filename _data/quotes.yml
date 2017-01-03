@@ -1,0 +1,12 @@
+- id: jean-bertrand-aristide
+  quotes:
+  - quote: "President Jean-Bertrand Aristide's last interview before he was deposed in February 2004"
+    event: White House Dinner
+    when: 
+    position: 1
+- id: rene-garcia-preval
+  quotes:
+  - quote: "Naje Pou Soti"
+    event: "Haiti hurricane Wilma"
+    when:
+    position: 1
