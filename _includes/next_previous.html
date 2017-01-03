@@ -2,7 +2,7 @@
   {% if page.collection %}
     {% assign  document = site[the_collection]  %}
   {% endif %}
-<h1>TITLE: {{ page.title }}</h1>
+<!-- h1>TITLE: {{ page.title }}</h1 -->
 {% for links in document  %}
   {% if links.title == page.title %}
     {% unless forloop.first %}
