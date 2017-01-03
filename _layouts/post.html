@@ -23,7 +23,7 @@ layout: default
 
   <article class="post-content">
     {{ content }}
-    <p>People mentioned in this article:
+    <p>This article is related to
     {% assign person = site.people | where: "name", page.person | first %}
     <a href="{{ person.url }}">{{ person.name }}</a></p>
   </article>
