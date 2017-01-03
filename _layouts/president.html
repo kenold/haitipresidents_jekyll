@@ -108,17 +108,38 @@ layout: default
     <div  class="interviews">
         <h2>{{ page.name }} Photos</h2>
         <div>
-        {% for photo in site.data.photos %}
+            {% for photo in site.data.photos %}
 
-            {% if photo.id == page.president_id %}
-                {% for image in photo.images limit:4 %}
-                    <a href="{{site.baseurl}}/assets/images/presidents/{{ image.file }}.jpg" data-lightbox="{{ image.file }}" data-title="{{ image.caption }}">
-                    <img src="{{site.baseurl}}/assets/images/presidents/{{ image.file }}.jpg" width="250" alt="{{ image.caption }} Photo"></a>
-                {% endfor %}
-            {% endif %}
-        {% endfor %}
+                {% if photo.id == page.president_id %}
+                    {% for image in photo.images limit:4 %}
+                        <a href="{{site.baseurl}}/assets/images/presidents/{{ image.file }}.jpg" data-lightbox="{{ image.file }}" data-title="{{ image.caption }}">
+                        <img src="{{site.baseurl}}/assets/images/presidents/{{ image.file }}.jpg" width="250" alt="{{ image.caption }} Photo"></a>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
-        <!-- - {{ site.data.photos['jean-bertrand-aristide'].caption }} -->
+
+    <!-- VIDEOS -->
+    <div  class="interviews">
+        <h2>{{ page.name }} Latest Videos</h2>
+        <div>
+            {% for video in site.data.videos %}
+
+                {% if video.id == page.president_id %}
+                    {% for video in video.videos limit:4 %}
+                        {% if video.video_id %}
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.video_id }}" frameborder="0" allowfullscreen></iframe>
+                        {% else %}
+                            <p class="post-meta">President {{ page.name }} has no videos yet.</p>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+
     </div>
     <hr>
     <div class="details">
