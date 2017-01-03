@@ -62,7 +62,10 @@ layout: default
             <li>Political Party:
                 {% comment %} Loop through political_parties object in people collection {% endcomment %}
             {% for party in page.political_parties %}
-                {{ party.name}} ({{ party.period}}),
+                {{ party.name}} ({{ party.period}})
+
+
+                {% unless forloop.last %},{% endunless %}
             {% endfor %}
             </li>
             <li>Spouse(s):
@@ -80,10 +83,15 @@ layout: default
         </ul>
     </div>
 
+    <!-- RELATED NEWS -->
     <div  class="interviews">
         <h2>{{ page.name }} Related News</h2>
         <ul class="listing">
-            <li>News 1</li>
+            {% assign myposts = site.posts | where: "person", page.name %}
+            {% for post in myposts %}
+              <li><a href="{{post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+
         </ul>
     </div>
     <div class="details">
