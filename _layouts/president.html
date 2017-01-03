@@ -103,6 +103,22 @@ layout: default
             <p class="post-meta">President {{ page.name }} has no related news.</p>
         {% endif %}
     </div>
+
+    <!-- PHOTO GALLERIES -->
+    <div  class="interviews">
+        <h2>{{ page.name }} Photo Galleries</h2>
+        <ul>
+        {% for photo in site.data.photos %}
+
+            {% if photo.id == page.key %}
+                {% for image in photo.images %}
+                  <li><img src="{{site.baseurl}}/assets/images/presidents/{{ image.file }}.jpg" width="150" alt="{{ image.caption }} Photo"></li>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        </ul>
+        <!-- - {{ site.data.photos['jean-bertrand-aristide'].caption }} -->
+    </div>
     <hr>
     <div class="details">
         <p>For more information on President {{ page.name }}, please visit <a href="{{ page.wikipedia }}" target="_blank">Wikipedia</a></p>
