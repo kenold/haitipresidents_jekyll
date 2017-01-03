@@ -1,17 +1,16 @@
 - id: jean-bertrand-aristide
-  description: "Aristide and Bill Clinton"
-  category: US
-  tags:
-    - bill-clinton
-    - aristide
+  description: "President Jean-Bertrand Aristide Photos"
   images:
   - caption: "Aristide and Bill Clinton"
     credit_name: "Kenold Beauplan"
     credit_url: twitter.com/kenoldb
     file: jean-bertrand-aristide
     position: 1
-  - caption: "Castro celebrates with Aristide"
-    credit_name: "Johnny Louis"
-    credit_url: website.com
+- id: rene-garcia-preval
+  description: "President Jean-Bertrand Aristide Photos"
+  images:
+  - caption: "Rene Preval at Santo-Domingo"
+    credit_name: "Kenold Beauplan"
+    credit_url: twitter.com/kenoldb
     file: rene-garcia-preval
-    position: 2
+    position: 1   
