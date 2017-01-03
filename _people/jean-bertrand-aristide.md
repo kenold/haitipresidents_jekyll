@@ -1,5 +1,5 @@
 ---
-id: jean-bertrand-aristide
+key: jean-bertrand-aristide
 position: 53
 name: Jean-Bertrand Aristide
 categories: [President]
