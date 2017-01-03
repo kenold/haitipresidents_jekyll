@@ -107,16 +107,17 @@ layout: default
     <!-- PHOTO GALLERIES -->
     <div  class="interviews">
         <h2>{{ page.name }} Photos</h2>
-        <ul>
+        <div>
         {% for photo in site.data.photos %}
 
-            {% if photo.id == page.key %}
-                {% for image in photo.images limit:1 %}
-                  <li><img src="{{site.baseurl}}/assets/images/presidents/{{ image.file }}.jpg" width="150" alt="{{ image.caption }} Photo"></li>
+            {% if photo.id == page.president_id %}
+                {% for image in photo.images limit:4 %}
+                    <a href="{{site.baseurl}}/assets/images/presidents/{{ image.file }}.jpg" data-lightbox="{{ image.file }}" data-title="{{ image.caption }}">
+                    <img src="{{site.baseurl}}/assets/images/presidents/{{ image.file }}.jpg" width="250" alt="{{ image.caption }} Photo"></a>
                 {% endfor %}
             {% endif %}
         {% endfor %}
-        </ul>
+    </div>
         <!-- - {{ site.data.photos['jean-bertrand-aristide'].caption }} -->
     </div>
     <hr>
