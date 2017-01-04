@@ -20,6 +20,25 @@ layout: default
         {{ content }}
     </article>
 
+    <!-- QUOTES -->
+    <div  class="interviews">
+        <div>
+            {% for president_quotes in site.data.quotes %}
+
+                {% if president_quotes.id == page.president_id %}
+                    {% for quote in president_quotes.quotes limit:4 %}
+                        {% if quote.title %}
+                          <blockquote cite="#">
+                            {{ quote.title }}
+                          </blockquote>
+                        {% else %}
+                            <p class="post-meta">President {{ page.name }} has no quotes yet.</p>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
  <hr>
 
     <!-- TERMS -->
