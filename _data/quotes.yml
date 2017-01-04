@@ -1,12 +1,12 @@
 - id: jean-bertrand-aristide
   quotes:
-  - quote: "President Jean-Bertrand Aristide's last interview before he was deposed in February 2004"
+  - title: "Your tool in hand, your instrument in hand, your constitution in hand! Don't hesitate to give him what he deserves."
     event: White House Dinner
-    when: 
+    when:
     position: 1
 - id: rene-garcia-preval
   quotes:
-  - quote: "Naje Pou Soti"
+  - title: "Naje Pou Soti"
     event: "Haiti hurricane Wilma"
     when:
     position: 1
