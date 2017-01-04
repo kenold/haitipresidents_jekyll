@@ -2,7 +2,7 @@
 president_id: rene-garcia-preval
 position: 53
 name: Rene Garcia Preval
-categories: [President]
+categories: [President, "Prime Minister"]
 type: Official
 photo: jean-bertrand-aristide.jpg
 credits:

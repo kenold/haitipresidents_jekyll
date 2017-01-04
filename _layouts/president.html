@@ -3,13 +3,13 @@ layout: default
 ---
 <div class="post">
 
-  <header class="post-header">
+    <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">
         {% assign term_count = page.terms.size %}
         Served {{ term_count }}
         {% if page.terms.size <= 1 %} term{% else %} terms{% endif %}. </p>
-  </header>
+    </header>
 
     <!-- div class="featured-image">
         <img src="/assets/images/presidents/{{ page.photo }}" alt="Haitian President {{ page.name }}">
@@ -38,7 +38,7 @@ layout: default
             {% endfor %}
         </div>
     </div>
- <hr>
+    <hr>
 
     <!-- TERMS -->
     <div class="interviews">
@@ -143,7 +143,6 @@ layout: default
         <h2>{{ page.name }} Latest Videos</h2>
         <div>
             {% for video in site.data.videos %}
-
                 {% if video.id == page.president_id %}
                     {% for video in video.videos limit:4 %}
                         {% if video.video_id %}
@@ -155,9 +154,6 @@ layout: default
                 {% endif %}
             {% endfor %}
         </div>
-    </div>
-
-
     </div>
     <hr>
     <div class="details">
