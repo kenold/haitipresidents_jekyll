@@ -2,10 +2,21 @@
 layout: archive
 ---
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+<h3 class="archive__subtitle">Newest Presidents</h3>
+<div class="list__item">
+    {% for person in site.people %}
+        <article class="archive__item">
+            {% assign term = person.terms | last %}
+            <a href="{{ person.url }}">
+            <h2 class="archive__item-title">{{ term.start | date: '%Y' }} - {{ term.end | date: '%Y' }}</h2>
+            {{ person.title }}</a>
+        </article>
+    {% endfor %}
+</div>
 
+<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 {% for post in paginator.posts %}
-  {% include archive-single.html %}
+    {% include archive-single.html %}
 {% endfor %}
 
 {% include paginator.html %}
