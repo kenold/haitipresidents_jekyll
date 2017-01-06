@@ -1,36 +1,28 @@
-<!DOCTYPE html>
-<html>
+---
+---
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+  <head>
     {% include head.html %}
-    <body>
-        {% include header.html %}
-        <div class="wrapper">
-            <div class="page-content">
-                {{ content }}
-            </div>
-            {% include footer.html %}
-        </div>
+    {% include head/custom.html %}
+  </head>
 
-        <!-- <script src="//cdn.jsdelivr.net/headroomjs/0.5.0/headroom.min.js"></script>
-        <script type="text/javascript">
-          var el = document.querySelector(".header-container");
-          var headroom  = new Headroom(el, {
-            "offset": 205,
-            "tolerance": 5
-          });
-          headroom.init();
-        </script> -->
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
 
-        <!-- Twitter Shizzle -->
-        <script type="text/javascript">
-        window.twttr = (function (d, s, id) {
-          var t, js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src= "https://platform.twitter.com/widgets.js";
-          fjs.parentNode.insertBefore(js, fjs);
-          return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
-        }(document, "script", "twitter-wjs"));
-        </script>
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
 
-    </body>
+    {{ content }}
+
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
 </html>
