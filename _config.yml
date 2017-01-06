@@ -241,7 +241,7 @@ defaults:
       path: ""
       type: people
     values:
-      layout: single
+      layout: president
       person_profile: true
       share: true
   - scope:
