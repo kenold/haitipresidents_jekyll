@@ -1,8 +1,10 @@
 ---
 layout: single
-title:  "President Aristide to participate in 2016 Elections!"
-date:   2017-01-01 14:40:24 -0500
-categories: jekyll update
+title: "President Aristide to participate in 2016 Elections!"
+date: 2017-01-01 14:40:24 -0500
+categories:
+  - jekyll
+  - update
 person: Jean-Bertrand Aristide
 tags:
   - aristide
