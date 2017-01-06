@@ -128,9 +128,9 @@ layout: default
               {% comment %} Get a president's new where the president's name equals person
                   variable in posts, then assign the posts to a variable "posts"
               {% endcomment %}
-              {% assign posts = site.posts | where: "person", page.name %}
+              {% assign posts = site.posts | where: "person", page.title %}
               <div  class="interviews">
-                  <h2>{{ page.name }} Related News</h2>
+                  <h2>{{ page.title }} Related News</h2>
                   {% comment %} Display related news if there are posts for this person {% endcomment %}
                   {% if posts.size != 0 %}
                       <ul class="listing">
@@ -140,7 +140,7 @@ layout: default
 
                       </ul>
                   {% else %}
-                      <p class="post-meta">President {{ page.name }} has no related news.</p>
+                      <p class="post-meta">President {{ page.title }} has no related news.</p>
                   {% endif %}
               </div>
 
