@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Site Title"
+title                    : "Haiti Presidents"
 title_separator          : "-"
 name                     : "Your Name"
-description              : "An amazing website."
+description              : "List of past and present Haitian Presidents."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -77,7 +77,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Kenold Beauplan"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an amazing person."
   location         : "Somewhere"
@@ -230,10 +230,20 @@ compress_html:
   ignore:
     envs: development
 
-
-# Defaults
+# Collections
+collections:
+  people:
+      output: true
+      permalink: /president/:path/
 defaults:
-  # _posts
+  # _people
+  - scope:
+      path: ""
+      type: people
+    values:
+      layout: single
+      person_profile: true
+      share: true
   - scope:
       path: ""
       type: posts
@@ -244,3 +254,18 @@ defaults:
       comments: # true
       share: true
       related: true
+
+#
+# # Defaults
+# defaults:
+#   # _posts
+#   - scope:
+#       path: ""
+#       type: posts
+#     values:
+#       layout: single
+#       author_profile: true
+#       read_time: true
+#       comments: # true
+#       share: true
+#       related: true
