@@ -31,9 +31,14 @@ layout: default
         </header>
       {% endunless %}
 
-      <section class="page__content" itemprop="text">
+        <section class="page__content" itemprop="text">
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+
+        <p>This article is related to
+            {% assign person = site.people | where: "name", page.person | first %}
+            <a href="{{ person.url }}">{{ person.name }}</a>
+        </p>
       </section>
 
       <footer class="page__meta">
