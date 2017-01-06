@@ -1,7 +1,7 @@
 ---
 president_id: jean-bertrand-aristide
 position: 53
-name: Jean-Bertrand Aristide
+title: Jean-Bertrand Aristide
 categories: [President]
 type: Official
 photo: jean-bertrand-aristide.jpg
@@ -23,7 +23,9 @@ terms:
   - id: 2
     start: 1994-10-12
     end: 1996-02-24
-    prime_ministers: [Jean Marie Chérestal, Yvon Neptune]
+    prime_ministers:
+      - Jean Marie Chérestal
+      - Yvon Neptune
     predecessor: Emile Jonassaint
     successor: Rene Garcia Preval
     status: Overthrown
@@ -35,7 +37,9 @@ political_parties:
 spouses:
   - name: Mildred Trouillot
     period: 1996-present
-kids: [James Aristide, Annie Aristide]
+kids:
+  - James Aristide
+  - Annie Aristide
 education: [Collège Notre-Dame, State University of Haiti, University of South Africa]
 religion: Roman Catholicism
 occupation: Priest
