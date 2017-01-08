@@ -1,22 +1,24 @@
 ---
-layout: archive
+layout: splash
 ---
 
-<h3 class="archive__subtitle">Newest Presidents</h3>
-<div class="list__item">
-    {% for person in site.people %}
-        <article class="archive__item">
-            {% assign term = person.terms | last %}
-            <a href="{{ person.url }}">
-            <h2 class="archive__item-title">{{ term.start | date: '%Y' }} - {{ term.end | date: '%Y' }}</h2>
-            {{ person.title }}</a>
-        </article>
+<h3 class="archive__subtitle">Most Recent Haitian Presidents</h3>
+<div class="feature__wrapper">
+    {% assign people = site.people | sort: "position" %}
+    {% for person in people limit: 4 %}
+        <div class="feature__item">
+            <div class="archive__item">
+                <div class="archive__item-teaser">
+                    <a href="{{ person.url }}"><img src="/assets/images/presidents/{{ person.photo }}" alt="{{ person.name }}"></a>
+                </div>
+                <div class="archive__item-body">
+                    {% assign term = person.terms | last %}
+                    <a href="{{ person.url }}"><h2 class="archive__item-title">{{ person.name }}</h2></a>
+                        <div class="archive__item-excerpt">
+                            <p>{{ term.start | date: '%Y' }} - {{ term.end | date: '%Y' }}</p>
+                        </div>
+                </div>
+            </div>
+        </div>
     {% endfor %}
 </div>
-
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
-{% for post in paginator.posts %}
-    {% include archive-single.html %}
-{% endfor %}
-
-{% include paginator.html %}
