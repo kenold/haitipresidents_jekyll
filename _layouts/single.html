@@ -37,7 +37,7 @@ layout: default
 
         <p>This article is related to
             {% assign person = site.people | where: "name", page.person | first %}
-            <a href="{{ person.url }}">{{ person.title }}</a>
+            <a href="{{ person.url }}">{{ person.name }}</a>
         </p>
       </section>
 
