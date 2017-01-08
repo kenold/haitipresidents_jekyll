@@ -1,10 +1,10 @@
 ---
 president_id: rene-garcia-preval
 position: 53
-title: Rene Garcia Preval
+name: Rene Garcia Preval
 categories: [President, "Prime Minister"]
 type: Official
-photo: jean-bertrand-aristide.jpg
+photo: rene-garcia-preval.jpg
 credits:
   - name:
   - url:
@@ -20,13 +20,6 @@ terms:
     predecessor: Ertha Pascal Trouillot
     successor: Jean-Bertrand Aristide
     status: Overthrown
-  - id: 2
-    start: 2006-05-04
-    end: 2011-05-14
-    prime_ministers: [Jean Marie Chérestal, Yvon Neptune]
-    predecessor: Emile Jonassaint
-    successor: Rene Garcia Preval
-    status: Overthrown
 political_parties:
   - name: 	Lavalas Political Organization
     period: 1991-1996
@@ -40,7 +33,10 @@ education: [Collège Notre-Dame, State University of Haiti, University of South 
 religion: Roman Catholicism
 occupation: Priest
 tags: [titid, lavalas, fanmi-lavalas]
-website:
+website: renepreval.org
+twitter: renepreval
+facebook: renepreval
+instagram: renepreval
 wikipedia: https://en.wikipedia.org/wiki/Jean-Bertrand_Aristide
 ---
 Preval: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quia eos vitae rerum dignissimos illum at quae ullam assumenda, enim. Incidunt tenetur eum fugit rerum nam doloremque, fuga eaque dolorem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quia eos vitae rerum dignissimos illum at quae ullam assumenda, enim. Incidunt tenetur eum fugit rerum nam doloremque, fuga eaque dolorem.
