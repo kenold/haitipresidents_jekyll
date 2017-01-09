@@ -36,7 +36,7 @@ layout: default
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
 
         <p>This article is related to
-            {% assign person = site.people | where: "president_id", page.person_id | first %}
+            {% assign person = site.people | where: "_id", page.person_id | first %}
             <a href="{{ person.url }}">{{ person.name }}</a>
         </p>
       </section>

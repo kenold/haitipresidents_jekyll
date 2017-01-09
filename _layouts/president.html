@@ -35,7 +35,7 @@ layout: default
                 {{ content }}
 
                 <!-- QUOTES -->
-                {% assign quotes = site.data.quotes[page.president_id].quotes %}
+                {% assign quotes = site.data.quotes[page._id].quotes %}
                 {% for president_quote in quotes %}
                     {% if president_quote.title %}
                         <blockquote cite="#">
@@ -101,7 +101,7 @@ layout: default
                 {% comment %} Get a president's news where the president's name equals person
                   variable in posts, then assign the posts to a variable "posts"
                 {% endcomment %}
-                {% assign posts = site.posts | where: "person_id", page.president_id %}
+                {% assign posts = site.posts | where: "person_id", page._id %}
                 <h2>{{ page.name }} Related News</h2>
                 {% comment %} Display related news if there are posts for this person {% endcomment %}
                 {% if posts.size != 0 %}
@@ -117,7 +117,7 @@ layout: default
                 <!-- PHOTO GALLERIES -->
                 <h2>{{ page.name }} Photos</h2>
 
-                {% assign photos = site.data.photos[page.president_id].images %}
+                {% assign photos = site.data.photos[page._id].images %}
                 {% for photo in photos %}
                     <a href="{{site.baseurl}}/assets/images/presidents/{{ photo.file }}.jpg" data-lightbox="{{ photo.file }}" data-title="{{ photo.caption }}">
                     <img src="{{site.baseurl}}/assets/images/presidents/{{ photo.file }}.jpg" width="250" alt="{{ photo.caption }} Photo"></a>
@@ -125,7 +125,7 @@ layout: default
 
                 <!-- VIDEOS -->
                 <h2>{{ page.name }} Latest Videos</h2>
-                {% assign videos = site.data.videos[page.president_id].videos %}
+                {% assign videos = site.data.videos[page._id].videos %}
                 {% for video in videos %}
                     {% if video.video_id %}
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.video_id }}" frameborder="0" allowfullscreen></iframe>
