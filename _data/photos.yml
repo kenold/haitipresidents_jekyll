@@ -1,16 +1,14 @@
-- id: jean-bertrand-aristide
-  description: "President Jean-Bertrand Aristide Photos"
+jean-bertrand-aristide:
   images:
   - caption: "Aristide and Bill Clinton"
     credit_name: "Kenold Beauplan"
     credit_url: twitter.com/kenoldb
     file: jean-bertrand-aristide
     position: 1
-- id: rene-garcia-preval
-  description: "President Jean-Bertrand Aristide Photos"
+rene-garcia-preval:
   images:
   - caption: "Rene Preval at Santo-Domingo"
     credit_name: "Kenold Beauplan"
     credit_url: twitter.com/kenoldb
     file: rene-garcia-preval
-    position: 1   
+    position: 1

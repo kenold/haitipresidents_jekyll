@@ -1,11 +1,11 @@
-- id: jean-bertrand-aristide
+jean-bertrand-aristide:
   videos:
   - description: "President Jean-Bertrand Aristide's last interview before he was deposed in February 2004"
     video_id: KHE3bGij9WQ
     video_source: youtube
     thumb:
     position: 1
-- id: rene-garcia-preval
+rene-garcia-preval:
   videos:
   - description: "Rene Garcia Preval visit the US"
     video_id:
