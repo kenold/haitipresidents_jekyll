@@ -5,7 +5,7 @@ date: 2017-01-01 14:40:24 -0500
 categories:
   - jekyll
   - update
-person: Jean-Bertrand Aristide
+person_id: jean-bertrand-aristide
 tags:
   - aristide
   - titid
