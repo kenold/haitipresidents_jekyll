@@ -32,135 +32,109 @@ layout: default
             {% endunless %}
 
             <section class="page__content" itemprop="text">
-                <article class="post-content">
-                  {{ content }}
-                </article>
+                {{ content }}
 
                 <!-- QUOTES -->
-                <div  class="interviews">
-                    <div>
-                        {% assign quotes = site.data.quotes[page.president_id].quotes %}
-                        {% for president_quote in quotes %}
-                            {% if president_quote.title %}
-                                <blockquote cite="#">
-                                    {{ president_quote.title }}
-                                </blockquote>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
+                {% assign quotes = site.data.quotes[page.president_id].quotes %}
+                {% for president_quote in quotes %}
+                    {% if president_quote.title %}
+                        <blockquote cite="#">
+                            {{ president_quote.title }}
+                        </blockquote>
+                    {% endif %}
+                {% endfor %}
 
                 <!-- TERMS -->
-                <div class="interviews">
-                    <h2>{{ page.name }} Terms</h2>
+                <h2>{{ page.name }} Terms</h2>
+                <ul class="listing">
+                    {% for term in page.terms %}
+                        <li><strong>{{ term.start | date: "%B %-d, %Y" }} - {{ term.end | date: "%B %-d, %Y" }}</strong></li>
+                        <li>Prime Minister(s): {{ term.prime_ministers | join: ", " }}</li>
+                        <li>Preceded by: {{ term.predecessor }}</li>
 
-                    <ul class="listing">
-                        {% for term in page.terms %}
-                            <li><strong>{{ term.start | date: "%B %-d, %Y" }} - {{ term.end | date: "%B %-d, %Y" }}</strong></li>
-                            <li>Prime Minister(s): {{ term.prime_ministers | join: ", " }}</li>
-                            <li>Preceded by: {{ term.predecessor }}</li>
+                        {% comment %} Capture successor's name, set it to a "person" variable {% endcomment %}
+                        {% capture person %}{{ term.successor }}{% endcapture %}
 
-                            {% comment %} Capture successor's name, set it to a "person" variable {% endcomment %}
-                            {% capture person %}{{ term.successor }}{% endcapture %}
-
-                            {% comment %}
-                              Find first person's "name" in people collection that matches successor's name above (person),
-                              then assign it to a "path" variable
-                            {% endcomment %}
-                            {% assign path = site.people | where: "name", person }} | first %}
-                            <li>Succeeded by:
-                                {% comment %} Only show hyperlink if path found {% endcomment %}
-                                {% if path %}
-                                    <a href="{{ path.url }}"> {{ term.successor }}</a>
-                                {% else %}
-                                    {{ term.successor }}
-                                {% endif %}
-                            </li>
-                            <li>Status: {{ term.status }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
+                        {% comment %}
+                          Find first person's "name" in people collection that matches successor's name above (person),
+                          then assign it to a "path" variable
+                        {% endcomment %}
+                        {% assign path = site.people | where: "name", person }} | first %}
+                        <li>Succeeded by:
+                            {% comment %} Only show hyperlink if path found {% endcomment %}
+                            {% if path %}
+                                <a href="{{ path.url }}"> {{ term.successor }}</a>
+                            {% else %}
+                                {{ term.successor }}
+                            {% endif %}
+                        </li>
+                        <li>Status: {{ term.status }}</li>
+                    {% endfor %}
+                </ul>
 
                 <!-- PERSONAL DETAILS-->
-                <div class="interviews">
-                  <h2>{{ page.name }} Personal Details</h2>
+                <h2>{{ page.name }} Personal Details</h2>
+                <ul class="listing">
+                    <li>Born: {{ page.birth_date | date: '%B %d, %Y' }}, {{ page.birth_place }}</li>
+                    <li>Political Party:
+                        {% comment %} Loop through political_parties object in people collection {% endcomment %}
+                    {% for party in page.political_parties %}
+                        {{ party.name}} ({{ party.period}})
+                      {% unless forloop.last %},{% endunless %}
+                    {% endfor %}
+                    </li>
+                    <li>Spouse(s):
+                        {% comment %} Loop through spouses object in people collection {% endcomment %}
+                        {% for spouse in page.spouses %}
+                            {{ spouse.name}} ({{ spouse.period }})
+                        {% endfor %}
+                    </li>
+                    <li>Children: {{ page.kids | join: ", "}}</li>
+                    <li>Religion: {{ page.religion }}</li>
 
-                  <ul class="listing">
-                      <li>Born: {{ page.birth_date | date: '%B %d, %Y' }}, {{ page.birth_place }}</li>
-                      <li>Political Party:
-                          {% comment %} Loop through political_parties object in people collection {% endcomment %}
-                      {% for party in page.political_parties %}
-                          {{ party.name}} ({{ party.period}})
-
-
-                          {% unless forloop.last %},{% endunless %}
-                      {% endfor %}
-                      </li>
-                      <li>Spouse(s):
-                          {% comment %} Loop through spouses object in people collection {% endcomment %}
-                      {% for spouse in page.spouses %}
-                          {{ spouse.name}} ({{ spouse.period }})
-                      {% endfor %}
-                      </li>
-                      <li>Children: {{ page.kids | join: ", "}}</li>
-                      <li>Religion: {{ page.religion }}</li>
-
-                      {% comment %} Display website only if set {% endcomment %}
-                      {% if page.website %}<li>Website: {{ page.website }}</li>{% endif %}
-                      <li>Education: {{ page.education | join: ", " }}</li>
-                  </ul>
-                </div>
+                    {% comment %} Display website only if set {% endcomment %}
+                    {% if page.website %}<li>Website: {{ page.website }}</li>{% endif %}
+                    <li>Education: {{ page.education | join: ", " }}</li>
+                </ul>
 
                 <!-- RELATED NEWS -->
-                {% comment %} Get a president's new where the president's name equals person
+                {% comment %} Get a president's news where the president's name equals person
                   variable in posts, then assign the posts to a variable "posts"
                 {% endcomment %}
-                {% assign posts = site.posts | where: "person", page.title %}
-                <div  class="interviews">
-                  <h2>{{ page.title }} Related News</h2>
-                  {% comment %} Display related news if there are posts for this person {% endcomment %}
-                  {% if posts.size != 0 %}
-                      <ul class="listing">
-                          {% for post in posts %}
+                {% assign posts = site.posts | where: "person_id", page.president_id %}
+                <h2>{{ page.name }} Related News</h2>
+                {% comment %} Display related news if there are posts for this person {% endcomment %}
+                {% if posts.size != 0 %}
+                    <ul class="listing">
+                        {% for post in posts %}
                             <li><a href="{{post.url }}">{{ post.title }}</a></li>
-                          {% endfor %}
-
-                      </ul>
-                  {% else %}
-                      <p class="post-meta">President {{ page.title }} has no related news.</p>
-                  {% endif %}
-                </div>
+                        {% endfor %}
+                  </ul>
+                {% else %}
+                    <p class="post-meta">President {{ page.name }} has no related news.</p>
+                {% endif %}
 
                 <!-- PHOTO GALLERIES -->
-                <div  class="interviews">
-                    <h2>{{ page.name }} Photos</h2>
-                    <div>
-                        {% assign photos = site.data.photos[page.president_id].images %}
-                        {% for photo in photos %}
-                            <a href="{{site.baseurl}}/assets/images/presidents/{{ photo.file }}.jpg" data-lightbox="{{ photo.file }}" data-title="{{ photo.caption }}">
-                            <img src="{{site.baseurl}}/assets/images/presidents/{{ photo.file }}.jpg" width="250" alt="{{ photo.caption }} Photo"></a>
-                        {% endfor %}
-                    </div>
-                </div>
+                <h2>{{ page.name }} Photos</h2>
+
+                {% assign photos = site.data.photos[page.president_id].images %}
+                {% for photo in photos %}
+                    <a href="{{site.baseurl}}/assets/images/presidents/{{ photo.file }}.jpg" data-lightbox="{{ photo.file }}" data-title="{{ photo.caption }}">
+                    <img src="{{site.baseurl}}/assets/images/presidents/{{ photo.file }}.jpg" width="250" alt="{{ photo.caption }} Photo"></a>
+                {% endfor %}
 
                 <!-- VIDEOS -->
-                <div  class="interviews">
-                    <h2>{{ page.name }} Latest Videos</h2>
-                    <div>
-                        {% assign videos = site.data.videos[page.president_id].videos %}
-                        {% for video in videos %}
-                            {% if video.video_id %}
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.video_id }}" frameborder="0" allowfullscreen></iframe>
-                            {% else %}
-                                <p class="post-meta">President {{ page.name }} has no videos yet.</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
+                <h2>{{ page.name }} Latest Videos</h2>
+                {% assign videos = site.data.videos[page.president_id].videos %}
+                {% for video in videos %}
+                    {% if video.video_id %}
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.video_id }}" frameborder="0" allowfullscreen></iframe>
+                    {% else %}
+                        <p class="post-meta">President {{ page.name }} has no videos yet.</p>
+                    {% endif %}
+                {% endfor %}
                 <hr>
-                <div class="details">
-                    <p>For more information on President {{ page.name }}, please visit <a href="{{ page.wikipedia }}" target="_blank">Wikipedia</a></p>
-                </div>
+                <p>For more information on President {{ page.name }}, please visit <a href="{{ page.wikipedia }}" target="_blank">Wikipedia</a></p>
             </section>
 
             <footer class="page__meta">
